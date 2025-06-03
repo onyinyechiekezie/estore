@@ -13,6 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class ProductServiceTest {
     @Autowired
     private ProductService productService;
+
     @Test
     public void testCanAddProduct() {
         AddProductRequest productRequest = new AddProductRequest();

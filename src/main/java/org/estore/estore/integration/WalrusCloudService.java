@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,6 +23,8 @@ public class WalrusCloudService implements CloudService {
     private String epoch;
     @Value("${walrus.app.address}")
     private String walrusUploadAddress;
+    @Value("${walrus.app.aggregrator}")
+    private String walrusAggregrator;
 
     private final RestTemplate restTemplate;
 
@@ -33,6 +34,12 @@ public class WalrusCloudService implements CloudService {
                 buildUploadRequest(file), WalrusUploadResponse.class,
                 createQueryParams()));
 
+    }
+
+    @Override
+    public byte[] getFileBy(String blobId){
+        ResponseEntity<byte[]> response = restTemplate.getForEntity(walrusAggregrator.concat(blobId), byte[].class);
+        return response.getBody();
     }
 
     private Map<String, Object> createQueryParams() {

@@ -23,8 +23,8 @@ public class WalrusCloudService implements CloudService {
     private String epoch;
     @Value("${walrus.app.address}")
     private String walrusUploadAddress;
-    @Value("${walrus.app.aggregrator}")
-    private String walrusAggregrator;
+    @Value("${walrus.app.aggregator}")
+    private String walrusAggregator;
 
     private final RestTemplate restTemplate;
 
@@ -38,7 +38,7 @@ public class WalrusCloudService implements CloudService {
 
     @Override
     public byte[] getFileBy(String blobId){
-        ResponseEntity<byte[]> response = restTemplate.getForEntity(walrusAggregrator.concat(blobId), byte[].class);
+        ResponseEntity<byte[]> response = restTemplate.getForEntity(walrusAggregator.concat(blobId), byte[].class);
         return response.getBody();
     }
 

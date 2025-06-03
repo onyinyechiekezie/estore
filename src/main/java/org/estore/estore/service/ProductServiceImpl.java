@@ -31,7 +31,7 @@ public class ProductServiceImpl implements ProductService{
     private void uploadMedia(MultipartFile media, Product product) {
         String blobId = cloudService.upload(media);
         String url = "localhost:8080/api/v1/images/" + blobId;
-        product.getMedia().add(blobId);
+        product.getMedia().add(url);
     }
 
     @Override

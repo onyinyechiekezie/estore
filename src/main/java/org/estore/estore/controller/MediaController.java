@@ -16,7 +16,7 @@ public class MediaController {
 
     private final CloudService cloudService;
 
-    @GetMapping(produces = {MediaType.IMAGE_PNG_VALUE, "video/mp4"})
+    @GetMapping(produces = {MediaType.IMAGE_PNG_VALUE, MediaType.APPLICATION_OCTET_STREAM_VALUE})
     public ResponseEntity<?> getMedia(@RequestParam String blobId) {
         cloudService.getFileBy(blobId);
         return ResponseEntity.status(HttpStatus.OK).body(cloudService.getFileBy(blobId));

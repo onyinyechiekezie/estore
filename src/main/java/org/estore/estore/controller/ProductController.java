@@ -25,4 +25,10 @@ public class ProductController {
                 .body(productService.add(product));
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getProduct(@PathVariable String id) {
+        System.out.println("id: " + id);
+        return ResponseEntity.ok(productService.getProductBy(id));
+    }
+
 }

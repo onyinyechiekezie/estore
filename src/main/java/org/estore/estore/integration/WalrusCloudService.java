@@ -38,7 +38,7 @@ public class WalrusCloudService implements CloudService {
 
     @Override
     public byte[] getFileBy(String blobId){
-        ResponseEntity<byte[]> response = restTemplate.getForEntity(walrusAggregator.concat(blobId), byte[].class);
+        ResponseEntity<byte[]> response = restTemplate.getForEntity(walrusAggregator.concat("/"+blobId), byte[].class);
         return response.getBody();
     }
 

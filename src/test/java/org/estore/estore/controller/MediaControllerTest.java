@@ -21,8 +21,8 @@ public class MediaControllerTest {
 
     @Test
     void testGetMedia() throws Exception {
-        String blobId = "";
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/media/")
+        String blobId = "rDVJJfy1tAp268tYrQ5AUxxtw9VnvmNArMQXUCFRsWs";
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/media")
                 .queryParam("blobId", blobId))
 
                 .andExpect(status().is2xxSuccessful())

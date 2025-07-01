@@ -6,5 +6,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AlreadyCertified {
-    private String BlobId;
+    private String blobId;
 }

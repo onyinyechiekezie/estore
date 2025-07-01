@@ -22,7 +22,7 @@ public class TestUtils {
         return order;
     }
 
-    public static AddProductRequest buildIAddProduct() {
+    public static AddProductRequest buildAddProduct() {
         String imagePath = "C:\\Users\\DELL\\Desktop\\byte_builder_store\\estore\\src\\test\\resources\\assets\\iphone16.jpg";
         String videoPath = "C:\\Users\\DELL\\Desktop\\byte_builder_store\\estore\\src\\test\\resources\\assets\\iphone16video.mp4";
         Path image = Paths.get(imagePath);

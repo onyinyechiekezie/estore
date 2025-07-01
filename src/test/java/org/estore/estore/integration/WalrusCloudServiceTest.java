@@ -37,7 +37,7 @@ public class WalrusCloudServiceTest {
 
     @Test
     void testCanGetFile() {
-        String blobId = "";
+        String blobId = "rDVJJfy1tAp268tYrQ5AUxxtw9VnvmNArMQXUCFRsWs";
         byte[] fileContent = cloudService.getFileBy(blobId);
         log.info("data--> {}", fileContent);
         assertThat(fileContent).isNotNull();

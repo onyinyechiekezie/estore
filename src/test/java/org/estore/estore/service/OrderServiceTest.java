@@ -23,8 +23,7 @@ public class OrderServiceTest {
     @Test
     @Sql(scripts = {"/db/script.sql"})
     public void testCanPlaceOrder() {
-        CreateOrderResponse createOrderResponse = orderService.
-                create(buildCreateOrder());
+        CreateOrderResponse createOrderResponse = orderService.create(buildCreateOrder());
         assertNotNull(createOrderResponse);
         assertThat(createOrderResponse.getMessage())
                 .containsIgnoringCase("Order Placed Successfully");
